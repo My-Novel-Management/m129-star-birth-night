@@ -80,6 +80,14 @@ def abstract(w: World):
     return w.writer_note("概要",
             )
 
+# Character
+def chara_note(w: World):
+    return w.writer_note("人物メモ",
+            "博士：主人公。天文台の職員で、夢を失った大人代表",
+            "星好きな子ども：誰もが星が見えないのを当たり前と思う中で、この子だけが星を見たいと夢を見る",
+            "スタッフ：天文台の職員。同僚の女性で、彼に夢を思い出させるきっかけを与える一人",
+            "子どもの親：他の子どもと違う自分の子のことを憂えている。そこから博士たちを快く思っていない",
+            )
 
 # main
 def main(): # pragma: no cover
@@ -105,6 +113,7 @@ def main(): # pragma: no cover
             writer_note(w),
             abstract(w),
             ch_main(w),
+            chara_note(w),
             )
 
 
