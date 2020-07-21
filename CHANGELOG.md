@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.3.0] - 2020-07-21
+### Added
+- Story structure
+### Changed
+- StoryBuilder: v0.5.9-23
+
 ## [0.1.0] - 2020-07-19
 ### Added
 - Story memo
@@ -15,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - This CHANGELOG file to hopefully serve as an evolving example of a standardized open source project CHANGELOG.
 - README one line implemented.
 
-[Unreleased]: https://github.com/My-Novel-Management/m129-star-birth-night/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/My-Novel-Management/m129-star-birth-night/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/My-Novel-Management/m129-star-birth-night/XXX/releases/v0.3.0
 [0.1.0]: https://github.com/My-Novel-Management/m129-star-birth-night/XXX/releases/v0.1.0
 [0.0.1]: https://github.com/My-Novel-Management/m129-star-birth-night/XXX/releases/v0.0.1
