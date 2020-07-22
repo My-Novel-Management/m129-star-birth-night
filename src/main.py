@@ -31,7 +31,7 @@ from config import ASSET
 
 # Constant
 TITLE = "星が生まれる夜"
-MAJOR, MINOR, MICRO = 0, 4, 0
+MAJOR, MINOR, MICRO = 0, 5, 0
 COPY = "星がなくなった世界"
 ONELINE = "星が見えなくなってしまった世界で、少年たちは自作の星を打ち上げる"
 OUTLINE = "約8000字のファンタジィ短編。星が見えなくなってしまった世界。用無しとなった天文台は廃棄される。その閉館記念日に星を詰めたロケットを打ち上げる"
@@ -50,44 +50,74 @@ RELEASED = (1, 1, 2020)
 def ep_dark_world(w: World):
     return w.episode("真っ暗な夜の世界",
             w.plot_setup("その世界ではいつからか星が見えなくなっていた"),
-            w.plot_note("天文台から夜空を見上げていたが、星は全く見えない、暗闇だった"),
-            w.plot_note("こっそりやってきた$chitoが$yazakiに星が消えた理由を尋ねる"),
-            w.plot_note("この世界ではいつからか、星が見えなくなってしまった"),
-            w.plot_note("天文台が廃棄になると通知があった"),
+            w.plot_note("苔むした天文台に忍び込んだ老人は、その望遠鏡のところまできてそこに宝箱を発見して、微笑する。夢と書かれた紙切れが入っていた"),
+            w.plot_note("まだ天文台が稼働していた頃、夜空を見上げてはため息をついていた$yazaki"),
+            w.plot_note("この世界ではいつからか星が見えなくなっていた"),
+            w.plot_note("夜、天文台にいつものように忍び込んできた$chitoがやってきて「今日も星が見えないね」と残念そうに言う"),
+            w.plot_note("$yazakiは彼に星というのは遠くの光が観測できるようになったもので、ひょっとすると全ての星が消滅してしまったのかも知れないと言う"),
+            w.plot_note("$chitoはどうしても図鑑で見た星空が見たくて、$yazakiに星を作って欲しいとお願いする"),
+            w.plot_note("しかし$yazakiは「星なんて作れるはずがない」と断言する"),
+            w.plot_note("翌日、天文台には閉鎖通知が届いた"),
             w.plot_turnpoint("天文台が廃棄になると通知がきた"),
             )
 
 def ep_creation(w: World):
     return w.episode("星を作ろう",
             w.plot_develop("$chitoが星を作ればいいと提案し、打ち上げロケットを作ることになる"),
-            w.plot_note("$chitoが見えないなら星を作ればいいと提案する"),
-            w.plot_note("$yazakiはそんなことできないと言うが、$chitoは無理じゃないと意地を張って自分で何とか考えようとする"),
-            w.plot_note("$chitoが火薬で怪我をして、両親が怒鳴り込んでくる"),
-            w.plot_note("計画は中止になり、天文台廃棄にむけて片付けを始める"),
+            w.plot_note("天文台にやってきた$chitoは閉鎖通知を知り、それなら尚の事、星を作るべきだと主張する"),
+            w.plot_note("星があれば天文台は存続できるし、自分も星を見れていいからと"),
+            w.plot_note("仕方なく$yazakiは簡単にできる打ち上げ式の発光体で誤魔化すことにした"),
+            "ペットボトルを使ったロケットでは２００ｍくらいは簡単に上がる。最高記録はカーボンファイバを使ったもので８３０ｍ",
+            w.plot_note("$yazakiが作ったのは２００ｍほど打ち上がるペットボトルロケットで、その先にＬＥＤライトの先端を取り付けた"),
+            w.plot_note("実験の日、こっそりやってきた$chitoは両親に色々と叱られているという。本人は気にしていないが、噂で天文台が悪い場所だと吹聴していると聞いた"),
+            w.plot_note("ロケットを打ち上げると$chitoはそれに感動するが、光はすぐに消えてしまった"),
+            w.plot_note("それを見せて「星は無理だよ、$chito」と諭す"),
+            w.plot_note("けれど$chitoはもっと大きなロケットでいっぱい星を乗せればいいと考え、自作すると言い出した"),
+            w.plot_note("それから$chitoは毎日天文台に通ってきてはロケット工作をするようになる"),
+            w.plot_note("図鑑などで勉強して、火薬を使えばいいという知識を手に入れた$chito"),
+            w.plot_note("ある日、天文台に$chitoの両親がやってくる"),
+            w.plot_note("家でこっそり実験していて$chitoが火傷をしたというのだ"),
+            w.plot_note("もうやめさせてください、と言い、二度と天文台には近づかせないと宣言された"),
+            w.plot_note("誰も来なくなった天文台で、$yazakiたちは閉館の準備を始めていた"),
             w.plot_turnpoint("打ち上げた星は光らなかった"),
             )
 
-def ep_realized(w: World):
-    return w.episode("気づき",
+def ep_planetarium(w: World):
+    return w.episode("プラネタリウム",
             w.plot_develop("天文台廃棄に向けて準備を進めつつ$yazakiは光らなかった理由を考える"),
-            w.plot_note("小さい頃の自分の夢を書いたものが出てきて、いつの間にか夢を忘れていたことに気づく$yazaki"),
-            w.plot_note("$chitoはこっそりやってきて、がんばって星を作ると言い出し、$yazakiはそれを手伝う"),
-            w.plot_note("$chitoが作った一番小さいロケットだけは、何故か小さな星を一瞬だけ見せてくれた"),
-            w.plot_note("$yazakiはあることに気づいた"),
-            w.plot_turnpoint("$yazakiは星の原因に気づいた"),
+            w.plot_develop("$yazakiはプラネタリウムを作ることを考案する"),
+            w.plot_note("自宅アパートで片付けと天文台閉鎖後の自分の行き先を考えていると、そこに小さい頃の夢と題したノートを見つけた"),
+            w.plot_note("そこには星が大好きでいつか自分で色々な星に行ってこの目で見たいと大きな字で書かれていた"),
+            w.plot_note("いつの間にか現実的なことばかり言いすぎて、そんな夢も希望も失っていたことを思い出す"),
+            w.plot_note("天文台が閉鎖になる前に、せめて町の子どもたちに星を見せようと、プラネタリウムを作ることを考える"),
+            w.plot_note("知り合いの技術者に連絡を取り、助手の$shinoの力も借りて、ホールに天幕を張り巡らし、そこにプラネタリウムを作り出す"),
+            w.plot_note("それと並行して、$chitoを閉館式になんとか招くため、毎日通って父親に科学の知識は危険ではないことを説く"),
+            w.plot_note("閉館式当日、なんとかプラネタリウムが完成した。多くの人が手伝ってくれるようになっていた"),
+            w.plot_note("だがそこに$chitoの姿はなかった"),
+            w.plot_turnpoint("閉館式に$chitoが訪れない"),
             )
 
 def ep_birth_star(w: World):
     return w.episode("星の生まれる夜",
             w.plot_resolve("星の光は人々の夢だった", "夢を打ち上げるとそれは星になった"),
-            w.plot_note("天文台が廃棄になり、閉館式を行ったその夜、準備していたロケットを打ち上げた"),
-            w.plot_note("今までは全部失敗だったが、夢を乗せたロケットは星の光になった"),
-            w.plot_note("夢を失った人々がそれを見上げ、忘れていた自分の夢を思い出した"),
+            w.plot_note("行方不明になった$chitoをみんなで探して回る"),
+            w.plot_note("しかし暗い夜では探しづらい"),
+            w.plot_note("星があれば、と考えるが、そのとき、$chitoのために準備しておいたロケットを思い出す"),
+            w.plot_note("ロケットを打ち上げる$yazaki"),
+            w.plot_note("それは空へと上がり、小さな光を夜空に作る"),
+            w.plot_note("それを見て、$chitoは出てきた"),
+            w.plot_note("天文台に行かせてくれない両親に反発し、天文台の近くの小屋に隠れていて、寝てしまっていたのだ"),
+            w.plot_note("と、$chitoが夜空を指差す"),
+            w.plot_note("夜空には小さく星が光っている"),
+            w.plot_note("慌てて$yazakiは天文台に戻り、それを観測した"),
+            w.plot_note("それは今までに見たことのない星だった"),
+            w.plot_note("すぐに連絡を入れる", "しかし一度決まったものは覆らないと役所の人間に言われてしまった"),
             w.plot_note("$yazakiは$shinoを誘い、夢を打ち上げる事業を始めると口にした"),
             )
 
 def ep_future_world(w: World):
     return w.episode("未来の夢",
+            "特別な最後。ハッピーエンドのために",
             w.plot_note("廃棄処分された天文台にこっそり忍び込む、老いた$yazaki"),
             w.plot_note("天文台は新しくなり、そこの職員として彼が、$chitoがやってくるらしい"),
             w.plot_note("$yazakiはおめでとうと、夢を忘れないようにというメッセージを宝箱に残した"),
@@ -97,7 +127,7 @@ def ch_main(w: World):
     return w.chapter('main',
             ep_dark_world(w),
             ep_creation(w),
-            ep_realized(w),
+            ep_planetarium(w),
             ep_birth_star(w),
             ep_future_world(w),
             )
