@@ -16,7 +16,11 @@ ASSET = {
         "STAGES": (
             # (tag / name / parent / (geometry) / info)
             ("Toyama", "富山県", "", (50,50)),
-            ("Observatory", "天文台", "Toyama"),# 富山市天文台をモデル
+            ("Town", "天文台の町", "Toyama"),
+            ("Observatory", "天文台", "Town"),# 富山市天文台をモデル
+            ("Apart", "ヤザキのアパート", "Town"),
+            ("ChitoHome", "チトの家", "Town"),
+            ("Shed", "物置小屋", "Town"),
             ),
         "DAYS": (
             # (tag / name / month / day / year)
