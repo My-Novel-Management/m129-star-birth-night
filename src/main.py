@@ -12,7 +12,11 @@ from storybuilder.assets import basic
 from storybuilder.assets import common_rubi
 from config import ASSET
 # import scenes
-# from scenes import xxx
+from scenes import Apart
+from scenes import ChitoHome
+from scenes import Observatory
+from scenes import Shed
+from scenes import Town
 
 
 ################################################################
@@ -50,29 +54,43 @@ RELEASED = (1, 1, 2020)
 def ep_dark_world(w: World):
     return w.episode("真っ暗な夜の世界",
             w.plot_setup("その世界ではいつからか星が見えなくなっていた"),
+            Observatory.mystery_oldman(w),
+            Observatory.missing_star_world(w),
             w.plot_turnpoint("天文台が廃棄になると通知がきた"),
             )
 
 def ep_creation(w: World):
     return w.episode("星を作ろう",
             w.plot_develop("$chitoが星を作ればいいと提案し、打ち上げロケットを作ることになる"),
+            Observatory.create_star(w),
+            Observatory.chitos_creation(w),
+            Observatory.chito_burned(w),
             w.plot_turnpoint("打ち上げた星は光らなかった"),
             )
 
 def ep_planetarium(w: World):
     return w.episode("プラネタリウム",
             w.plot_develop("天文台廃棄に向けて準備を進めつつ$yazakiは光らなかった理由を考える"),
+            Apart.dream_note(w),
             w.plot_develop("$yazakiはプラネタリウムを作ることを考案する"),
+            Observatory.planetarium(w),
+            ChitoHome.pursuade(w),
             w.plot_turnpoint("閉館式に$chitoが訪れない"),
             )
 
 def ep_birth_star(w: World):
     return w.episode("星の生まれる夜",
             w.plot_resolve("星の光は人々の夢だった", "夢を打ち上げるとそれは星になった"),
+            Observatory.closing_ceremony(w),
+            Town.searching(w),
+            Apart.balloon_star(w),
+            Shed.find_chito(w),
+            Observatory.ovserbation(w),
             )
 
 def ep_future_world(w: World):
     return w.episode("未来の夢",
+            Observatory.future_observatory(w),
             )
 
 def ch_main(w: World):
