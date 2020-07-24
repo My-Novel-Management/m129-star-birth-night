@@ -35,7 +35,7 @@ from scenes import Town
 
 # Constant
 TITLE = "星が生まれる夜"
-MAJOR, MINOR, MICRO = 0, 6, 0
+MAJOR, MINOR, MICRO = 0, 7, 0
 COPY = "星がなくなった世界"
 ONELINE = "星が見えなくなってしまった世界で、少年たちは自作の星を打ち上げる"
 OUTLINE = "約8000字のファンタジィ短編。星が見えなくなってしまった世界。用無しとなった天文台は廃棄される。その閉館記念日に星を詰めたロケットを打ち上げる"
@@ -54,7 +54,7 @@ RELEASED = (1, 1, 2020)
 def ep_dark_world(w: World):
     return w.episode("真っ暗な夜の世界",
             w.plot_setup("その世界ではいつからか星が見えなくなっていた"),
-            Observatory.mystery_oldman(w),
+            Observatory.mystery_oldman(w).omit(),# NOTE: 冒頭シーンから未来＝現在の描写は削除
             Observatory.missing_star_world(w),
             w.plot_turnpoint("天文台が廃棄になると通知がきた"),
             )
@@ -74,7 +74,7 @@ def ep_planetarium(w: World):
             Apart.dream_note(w),
             w.plot_develop("$yazakiはプラネタリウムを作ることを考案する"),
             Observatory.planetarium(w),
-            ChitoHome.pursuade(w),
+            ChitoHome.pursuade(w).omit(),
             w.plot_turnpoint("閉館式に$chitoが訪れない"),
             )
 
@@ -84,6 +84,7 @@ def ep_birth_star(w: World):
             Observatory.closing_ceremony(w),
             Town.searching(w),
             Apart.balloon_star(w),
+            Town.launching(w),
             Shed.find_chito(w),
             Observatory.ovserbation(w),
             )
@@ -91,7 +92,7 @@ def ep_birth_star(w: World):
 def ep_future_world(w: World):
     return w.episode("未来の夢",
             Observatory.future_observatory(w),
-            )
+            ).omit()
 
 def ch_main(w: World):
     return w.chapter('main',
@@ -100,6 +101,7 @@ def ch_main(w: World):
             ep_planetarium(w),
             ep_birth_star(w),
             ep_future_world(w),
+            w.symbol("（了）"),
             )
 
 
