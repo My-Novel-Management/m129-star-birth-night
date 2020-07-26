@@ -47,6 +47,7 @@ CONTEST_INFO = "妄想コンテスト「星降る夜に」"
 CAUTION = ""
 NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
+TAGS = ["ファンタジー", "天体観測", "星", "宇宙", "ヒューマンドラマ", "男主人公"]
 RELEASED = (7, 26, 2020)
 
 
@@ -64,16 +65,16 @@ def ep_creation(w: World):
             w.plot_develop("$chitoが星を作ればいいと提案し、打ち上げロケットを作ることになる"),
             Observatory.create_star(w),
             Observatory.chitos_creation(w),
-            Observatory.chito_burned(w),
-            w.plot_turnpoint("打ち上げた星は光らなかった"),
+            w.plot_turnpoint("$chitoとペットボトルロケットを作ることになった"),
             )
 
 def ep_planetarium(w: World):
     return w.episode("プラネタリウム",
             w.plot_develop("天文台廃棄に向けて準備を進めつつ$yazakiは光らなかった理由を考える"),
+            Observatory.chito_burned(w),
             Apart.dream_note(w),
             w.plot_develop("$yazakiはプラネタリウムを作ることを考案する"),
-            Observatory.planetarium(w),
+            Observatory.planetarium(w).omit(),
             ChitoHome.pursuade(w).omit(),
             w.plot_turnpoint("閉館式に$chitoが訪れない"),
             )
@@ -217,6 +218,7 @@ def main(): # pragma: no cover
     w.config.set_caution(f"{CAUTION}")
     w.config.set_note(f"{NOTE}")
     w.config.set_sites(*SITES)
+    w.config.set_taginfos(*TAGS)
     w.config.set_released(*RELEASED)
     return w.run(
             writer_note(w),
