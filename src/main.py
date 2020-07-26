@@ -84,9 +84,9 @@ def ep_birth_star(w: World):
             w.plot_resolve("星の光は人々の夢だった", "夢を打ち上げるとそれは星になった"),
             Observatory.closing_ceremony(w),
             Town.searching(w),
-            Apart.balloon_star(w),
+            Apart.balloon_star(w).omit(),
             Town.launching(w),
-            Shed.find_chito(w),
+            Shed.find_chito(w).omit(),
             Observatory.ovserbation(w),
             )
 
