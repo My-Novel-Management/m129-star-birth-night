@@ -35,7 +35,7 @@ from scenes import Town
 
 # Constant
 TITLE = "星が生まれる夜"
-MAJOR, MINOR, MICRO = 0, 8, 0
+MAJOR, MINOR, MICRO = 0, 9, 0
 COPY = "星がなくなった世界"
 ONELINE = "星が見えなくなってしまった世界で、少年と男は自作の星を打ち上げようとした"
 OUTLINE = "約8000字のファンタジィ短編。星が見えなくなってしまった世界。用無しとなった天文台は廃棄される。その閉館記念日に星を詰めたロケットを打ち上げる"
@@ -47,7 +47,7 @@ CONTEST_INFO = "妄想コンテスト「星降る夜に」"
 CAUTION = ""
 NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
-RELEASED = (1, 1, 2020)
+RELEASED = (7, 26, 2020)
 
 
 # Episodes
