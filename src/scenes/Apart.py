@@ -14,6 +14,7 @@ def dream_note(w: World):
     yazaki = w.get('yazaki')
     return w.scene('夢のノート',
             w.cmd.change_stage("Apart"),
+            w.symbol("　　　　◆"),
             w.plot_note("自宅アパートで片付けと天文台閉鎖後の自分の行き先を考えていると、そこに小さい頃の夢と題したノートを見つけた"),
             w.plot_note("そこには星が大好きでいつか自分で色々な星に行ってこの目で見たいと大きな字で書かれていた"),
             w.plot_note("いつの間にか現実的なことばかり言いすぎて、そんな夢も希望も失っていたことを思い出す"),

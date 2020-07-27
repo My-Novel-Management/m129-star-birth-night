@@ -40,6 +40,7 @@ ASSET = {
             ),
         "RUBIS": (
             # (origin / rubi / exclusions / always)
+            ("儚い幻", "儚《はかな》い幻《まぼろし》"),
             ),
         }
 
