@@ -35,7 +35,7 @@ from scenes import Town
 
 # Constant
 TITLE = "星が生まれる夜"
-MAJOR, MINOR, MICRO = 0, 8, 0
+MAJOR, MINOR, MICRO = 0, 9, 0
 COPY = "星がなくなった世界"
 ONELINE = "星が見えなくなってしまった世界で、少年と男は自作の星を打ち上げようとした"
 OUTLINE = "約8000字のファンタジィ短編。星が見えなくなってしまった世界。用無しとなった天文台は廃棄される。その閉館記念日に星を詰めたロケットを打ち上げる"
@@ -47,7 +47,8 @@ CONTEST_INFO = "妄想コンテスト「星降る夜に」"
 CAUTION = ""
 NOTE = ""
 SITES = ["エブリスタ", "小説家になろう", "ノベルアッププラス", "カクヨム"]
-RELEASED = (1, 1, 2020)
+TAGS = ["ファンタジー", "天体観測", "星", "宇宙", "ヒューマンドラマ", "男主人公"]
+RELEASED = (7, 26, 2020)
 
 
 # Episodes
@@ -64,16 +65,16 @@ def ep_creation(w: World):
             w.plot_develop("$chitoが星を作ればいいと提案し、打ち上げロケットを作ることになる"),
             Observatory.create_star(w),
             Observatory.chitos_creation(w),
-            Observatory.chito_burned(w),
-            w.plot_turnpoint("打ち上げた星は光らなかった"),
+            w.plot_turnpoint("$chitoとペットボトルロケットを作ることになった"),
             )
 
 def ep_planetarium(w: World):
     return w.episode("プラネタリウム",
             w.plot_develop("天文台廃棄に向けて準備を進めつつ$yazakiは光らなかった理由を考える"),
+            Observatory.chito_burned(w),
             Apart.dream_note(w),
             w.plot_develop("$yazakiはプラネタリウムを作ることを考案する"),
-            Observatory.planetarium(w),
+            Observatory.planetarium(w).omit(),
             ChitoHome.pursuade(w).omit(),
             w.plot_turnpoint("閉館式に$chitoが訪れない"),
             )
@@ -83,9 +84,9 @@ def ep_birth_star(w: World):
             w.plot_resolve("星の光は人々の夢だった", "夢を打ち上げるとそれは星になった"),
             Observatory.closing_ceremony(w),
             Town.searching(w),
-            Apart.balloon_star(w),
+            Apart.balloon_star(w).omit(),
             Town.launching(w),
-            Shed.find_chito(w),
+            Shed.find_chito(w).omit(),
             Observatory.ovserbation(w),
             )
 
@@ -217,6 +218,7 @@ def main(): # pragma: no cover
     w.config.set_caution(f"{CAUTION}")
     w.config.set_note(f"{NOTE}")
     w.config.set_sites(*SITES)
+    w.config.set_taginfos(*TAGS)
     w.config.set_released(*RELEASED)
     return w.run(
             writer_note(w),
